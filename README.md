@@ -21,6 +21,7 @@
 ![image-2](image/image-2.png)
 
 ## 异常问题
+
 ```
 libQBDI.so library not found...
 frida.core.RPCException: Error: Invalid QBDI version !
@@ -29,3 +30,15 @@ frida.core.RPCException: Error: Invalid QBDI version !
 以上2个异常情况，可能是push libQBDI.so到手机时出了问题，重新运行python start_trace.py即可，其他异常情况待定
 
 如果trace过程中遇到其他异常情况，可以加我星球，再进行解答。
+
+
+
+////修改
+1.添加myagent.js  将所有的代码都整合到一个js 文件中,方便 自己 frida -UF -l myagent.js 加载;
+
+2.修改 start_trace.py 代码,可执行QBDI 之前判断版本并push so文件;
+
+3.通过修改 myagent.js  中的 "warp_vm_run" 函数中的数据;
+
+4.添加了 arm 程序的支持;
+
